@@ -37,72 +37,73 @@
 
 Tipos de Commit
 
-`feat`: Nueva funcionalidad
-`fix`: Corrección de errores
-`docs`: Cambios en documentación
-`style`: Cambios de formato, espacios, etc.
-`refactor`: Refactorización de código
-`test`: Añadir o modificar tests
-`chore`: Tareas de mantenimiento
+- `feat`: Nueva funcionalidad
+- `fix`: Corrección de errores
+- `docs`: Cambios en documentación
+- `style`: Cambios de formato, espacios, etc.
+- `refactor`: Refactorización de código
+- `test`: Añadir o modificar tests
+- `chore`: Tareas de mantenimiento
 
 ### Ejemplos
 
-feat(c1): implementar login de usuarios
-fix(c1): corregir validación de email en registro
-docs: actualizar README con instrucciones de instalación
-test(c2): añadir tests unitarios para módulo de reportes
+- feat(c1): implementar login de usuarios
+- fix(c1): corregir validación de email en registro
+- docs: actualizar README con instrucciones de instalación
+- test(c2): añadir tests unitarios para módulo de reportes
 
 ## Convención de Commits
 
 ### Configuración Inicial de Git
 
 Cada miembro debe ejecutar:
-git config --global user.name "Nombre"
-git config --global init.defaultBranch main
+
+- git config --global user.name "Nombre"
+- git config --global init.defaultBranch main
 
 ## Flujo de Trabajo
 
 ### Para Funcionalidades Nuevas
 
-Crear branch desde cicloX/develop
-Desarrollar funcionalidad
-Hacer commits siguiendo convenciones
-Push y crear Pull Request
-Revisión de código
-Merge a cicloX/develop
+- Crear branch desde cicloX/develop
+- Desarrollar funcionalidad
+- Hacer commits siguiendo convenciones
+- Push y crear Pull Request
+- Revisión de código
+- Merge a cicloX/develop
 
 ### Para Entregas
 
-Crear release/vX.Y.Z-CX desde cicloX/develop
-Testing final y correcciones
-Merge a main
-Tag de versión
-Merge de vuelta a develop
+- Crear release/vX.Y.Z-CX desde cicloX/develop
+- Testing final y correcciones
+- Merge a main
+- Tag de versión
+- SMerge de vuelta a develop
 
 ## Comandos Útiles
 
-# Cambiar a rama de trabajo
+### Cambiar a rama de trabajo
 
 `git checkout ciclo1/develop`
 
-# Crear nueva funcionalidad
+### Crear nueva funcionalidad
 
 `git checkout -b ciclo1/feature/nombre-funcionalidad`
 
-# Ver estado
+### Ver estado
 
 `git status`
 
-# Añadir cambios
+### Añadir cambios
 
 `git add .`
 
-# Commit con mensaje apropiado
+### Commit con mensaje apropiado
 
 `git commit -m "feat(c1): descripción del cambio"`
 
-# Subir cambios
+### Subir cambios
 
 `git push origin ciclo1/feature/nombre-funcionalidad`
 
-Documento actualizado: 20 Septiembre 2025
+# Documento actualizado: 20 Septiembre 2025
