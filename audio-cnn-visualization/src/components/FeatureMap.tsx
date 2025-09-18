@@ -29,18 +29,34 @@ const FeatureMap = ({
       >
         {data.flatMap((row, i) =>
           row.map((value, j) => {
-            const normalizedValues = absMax === 0 ? 0 : value / absMax;
-            const [r, g, b] = getColor(normalizedValues);
-            return (
-              <rect
-                key={`${i}-${j}`}
-                x={j}
-                y={i}
-                width={1}
-                height={1}
-                fill={`rgb(${r},${g},${b})`}
-              />
-            );
+            const safeValue = value ?? 0;
+            const normalizedValue = absMax === 0 ? 0 : safeValue / absMax;
+
+            try {
+              const [r, g, b] = getColor(normalizedValue);
+              return (
+                <rect
+                  key={`${i}-${j}`}
+                  x={j}
+                  y={i}
+                  width={1}
+                  height={1}
+                  fill={`rgb(${r ?? 0},${g ?? 0},${b ?? 0})`}
+                />
+              );
+            } catch (error) {
+              console.error("Error in getColor:", error);
+              return (
+                <rect
+                  key={`${i}-${j}`}
+                  x={j}
+                  y={i}
+                  width={1}
+                  height={1}
+                  fill="rgb(128,128,128)"
+                />
+              );
+            }
           }),
         )}
       </svg>
